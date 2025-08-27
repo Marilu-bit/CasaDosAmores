@@ -23,17 +23,17 @@
         <img src="../img/perfil.png" alt="">
     </main>
 
-    <div id="painel-produtos">
-        <!--BASE-->
-        <div class="opcoes-caixa" data-categoria="cafe">
-            <img src="img/Cafe/americano.jpg" alt="">
-            <p>Americano</p>
-            <p>Café</p>
-            <p id="preco">R$8,50</p>
-            <button>📝​</button>
-        </div>
-    </div>
+    <div class="opcoes">
 
+<!--BASE-->
+<div class="opcoes-caixa" data-categoria="cafe">
+    <img src="img/Cafe/americano.jpg" alt="">
+    <p>Americano</p>
+    <p>Café</p>
+    <p id="preco">R$8,50 </p>
+     <button>📝​</button>
+</div>
+</div>
 
     <footer>
         <p>Casa dos Amores</p>

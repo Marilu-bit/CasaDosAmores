@@ -38,16 +38,16 @@
                 <label for="CPF">CPF</label>
             </div>
 
-            <div class="input-container">
-                <input required type="text" id="img" />
-                <label for="img">Adicionar Imagem</label>
-            </div>
-
             <select required>
                 <option value="">Selecione o tipo</option>
                 <option>Cliente</option>
                 <option>Vendedor</option>
             </select>
+            
+            <div class="input-container">
+            <input type="file" name="foto" id="foto"><br><br>
+                <label for="img">Adicionar Imagem</label>
+            </div>
             </br>
             <button id="bt-cad">Cadastrar</button>
         </form>
