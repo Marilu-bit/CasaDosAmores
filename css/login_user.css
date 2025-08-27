@@ -1,0 +1,132 @@
+:root {
+    --azul: #007bff;
+    --branco: #ffffff;
+    --ciano: #90B4C8;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #B1E5E2;
+    font-family: "Della Respira", serif;  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+
+  /*NAV*/
+  nav {
+    width: 100%;
+    height: 40px;
+    background-color:var(--ciano);
+  }
+  
+  #top{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+
+  /*Formulário*/
+  h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .tabela_log {
+    max-width: 550px;
+    margin-top: 100px;
+    margin-left: 660px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #ffffff;
+    height: 600px;
+    border: 6px solid var(--ciano);
+    border-radius: 79px;
+  }
+  
+  .input-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  input {
+    width: 480px;
+    height: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 14px;
+    color: black;
+    border: 2px solid var(--azul);
+    background: #90B4C8;
+    border-radius: 5px;
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    font-size: 20px;
+  }
+  
+  label {
+    color: var(--branco);
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    background-color: var(--ciano);
+    padding: 0 4px;
+    pointer-events: none;
+    font-size: 20px;
+  }
+  
+  input:focus ~ label,
+  input:valid ~ label {
+    top: 10px;
+    font-size:20px;
+    background-color: var(--ciano);
+    color: var(--branco);
+    border: 20%;
+  }
+  
+  
+  option {
+    background-color: var(--azul);
+    color: white;
+  }
+  
+  #bt-log{
+    width: 535px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 2px solid var(--azul);
+    background: var(--ciano);
+    color: white;
+    font-size: 20px;
+  }
+  
+  p{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+
+  
+  
+  
+  footer{
+    background-color: #90B4C8;
+    color: #3F0F06;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: auto;
+}

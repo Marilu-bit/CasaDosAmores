@@ -1,0 +1,20 @@
+create database bddoceria;
+use bddoceria;
+
+create table tbuser(
+coduser int primary key auto_increment,
+nome varchar(90) not null,
+senha varchar(90) not null,
+telefone varchar(90) not null,
+pro_salvo varchar(90) not null
+);
+
+create table tbproduto(
+codproduto int primary key auto_increment,
+nome varchar(90) not null,
+tipo varchar(90) not null,
+preco varchar(90) not null,
+quantidade varchar(90) not null,
+imagem varchar(90) not null,
+coduser varchar(90) not null,
+);
