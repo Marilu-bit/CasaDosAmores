@@ -25,33 +25,6 @@
         </div>
     </div>
 
-    <!--<div id="promocao">
-        <h2>❤️Promoção Dia dos Namorados❤️</h2>
-
-        <div class="promocao">
-            <div class="opcoes-caixa">
-                <img src="img/Cafe/caramelo.jpg" alt="">
-                <p>Caramelo</p>
-                <p>Café</p>
-                <p id="preco">R$3,00</p>
-            </div>
-
-            <div class="opcoes-caixa">
-                <img src="img/Cha/camomila.jpg" alt="">
-                <p>Camomila</p>
-                <p>Chá</p>
-                <p id="preco">R$2,99</p>
-            </div>
-
-            <div class="opcoes-caixa">
-                <img src="img/Comestivel/torta.jpg" alt="">
-                <p>Torta</p>
-                <p>Doce</p>
-                <p id="preco">R$3,99</p>
-            </div>
-        </div>
-    </div>-->
-
     <main id="menu">
 
         <h2>Menu</h2>
@@ -67,13 +40,14 @@
         <div class="opcoes">
 
             <!--BASE-->
-            <div class="opcoes-caixa" data-categoria="cafe">
-                <img src="img/Cafe/americano.jpg" alt="">
+            <article class="opcoes-caixa" data-categoria="cafe">
+            <img src="img/perfil.png" alt="">
                 <p>Americano</p>
                 <p>Café</p>
-                <p id="preco">R$8,50 </p>
-                <button>🛒</button>
+                <p id="preco">R$8,50</p>
             </div>
+            </article>
+        
         </div>
 </main>
 

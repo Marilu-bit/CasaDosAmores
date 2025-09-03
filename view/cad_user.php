@@ -21,31 +21,27 @@
     
     <div class="tabela_cad">
       <h1>Seja Bem-Vindo!</h1>
-        <form>
+        <form action="../model/cad.php" method="POST">
           
             <div class="input-container">
-                <input required type="text" id="nome" />
+                <input required type="text" id="nome" name="cxnome"/>
                 <label for="nome">Nome</label>
             </div>
 
             <div class="input-container">
-                <input required type="password" id="senha" />
+                <input required type="password" id="senha" name="cxsenha"/>
                 <label for="senha">Senha</label>
             </div>
 
-            <div class="input-container">
-                <input required type="text" id="CPF" />
-                <label for="CPF">CPF</label>
-            </div>
 
-            <select required>
+            <select name="cxpro_salvo" required>
                 <option value="">Selecione o tipo</option>
                 <option>Cliente</option>
                 <option>Vendedor</option>
             </select>
             
             <div class="input-container">
-            <input type="file" name="foto" id="foto"><br><br>
+            <input type="file" name="cxfoto" id="foto"><br><br>
                 <label for="img">Adicionar Imagem</label>
             </div>
             </br>

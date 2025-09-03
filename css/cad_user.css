@@ -107,6 +107,11 @@ select {
   font-size: 20px;
 }
 
+#foto{
+  background-color: var(white);
+  color: white;
+}
+
 option {
   background-color: var(--azul);
   color: white;
