@@ -19,20 +19,19 @@
 
   <div class="tabela_log">
     <h1>Seja Bem-Vindo de volta!</h1>
-<form>
-    <div class="input-container">
-      <input required type="text" id="nome" />
-      <label for="nome">Nome</label>
+    <form>
+      <div class="input-container">
+        <input required type="text" id="nome" />
+        <label for="nome">Nome</label>
+      </div>
+      <div class="input-container">
+        <input required type="password" id="senha" />
+        <label for="senha">Senha</label>
+      </div>
+      <button id="bt-log">Login</button>
+      <p>Ainda não tem uma conta?<a href="cad_user.php">Faça cadastro.</a></p>
     </div>
-
-    <div class="input-container">
-      <input required type="password" id="senha" />
-      <label for="senha">Senha</label>
-    </div>
-    <button id="bt-log">Login</button>
-    <p>Ainda não tem uma conta?<a href="cad_user.php">Faça cadastro.</a></p>
-  </div>
-</form>
+  </form>
 
 <footer>
         <p>Casa dos Amores</p>

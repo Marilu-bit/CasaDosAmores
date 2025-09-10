@@ -21,7 +21,7 @@
     
     <div class="tabela_cad">
       <h1>Seja Bem-Vindo!</h1>
-        <form action="../model/cad.php" method="POST">
+        <form action="../model/cad.php" method="POST" enctype="multipart/form-data">
           
             <div class="input-container">
                 <input required type="text" id="nome" name="cxnome"/>
@@ -32,20 +32,12 @@
                 <input required type="password" id="senha" name="cxsenha"/>
                 <label for="senha">Senha</label>
             </div>
-
-
-            <select name="cxpro_salvo" required>
-                <option value="">Selecione o tipo</option>
-                <option>Cliente</option>
-                <option>Vendedor</option>
-            </select>
             
             <div class="input-container">
-            <input type="file" name="cxfoto" id="foto"><br><br>
-                <label for="img">Adicionar Imagem</label>
+                <input type="file" name="cxfoto" id="foto">
+                <label for="foto">Adicionar Imagem</label>
             </div>
-            </br>
-            <button id="bt-cad">Cadastrar</button>
+            <input type="submit" id="bmitBtn" name="Cadastrar" value="Cadastrar">
         </form>
 
         <p>Já tem uma conta?<a href="login_user.php">Faça login.</a></p>

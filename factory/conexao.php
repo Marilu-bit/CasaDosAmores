@@ -9,7 +9,7 @@
                    self::$connect = new PDO 
                    ('mysql:host=localhost;
                      dbname=bddoceria;',
-                    self::$usuario,self::$senha 
+                    self::$usuarios,self::$senha 
                    );                  
                 }
             } catch (Exception $ex) {
