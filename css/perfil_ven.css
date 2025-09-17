@@ -30,80 +30,107 @@ nav {
 
 
 
-  /* Grid de produtos */
-  .grid-produtos{
-    display:grid;
-    grid-template-columns: repeat(auto-fill,minmax(170px,1fr));
-    gap:18px;
-  }
-  .card-produto{
-    background: linear-gradient(180deg, #d5eeeb 0%, var(--card-bg) 100%);
-    padding:12px;
-    border-radius:18px;
-    box-shadow: var(--sombra-leve);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
-  }
-  .card-produto img{
-    width:110px;
-    height:110px;
-    object-fit:cover;
-    border-radius:12px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-  }
-  .info-produto{
-    text-align:center;
-  }
-  .info-produto .nome{
-    font-weight:700;
-    font-size:14px;
-  }
-  .info-produto .preco{
-    font-weight:800;
-    color:#113;
-    margin-top:6px;
-    font-size:15px;
-  }
-  .card-acoes{
-    margin-top:auto;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    gap:8px;
-  }
-  .btn{
-    border:none;
-    padding:8px 10px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-  }
-  .btn-editar{ background:#f3a3a9; color:#222; }
-  .btn-comprar{ background:#ffd9c9; color:#222; }
-  
-    /*Verificar*/
-    #painel-vendedor{
-    display:flex;
-    gap:28px;
-    align-items:flex-start;
-  }
-  .lista-mini{
-    width:220px;
-    background:var(--fundo-principal);
-    padding:14px;
-    border-radius:12px;
-    box-shadow:var(--sombra-leve);
-  }
-  .lista-mini .item{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    margin-bottom:12px;
-  }
-  .lista-mini img{ width:50px; height:50px; border-radius:8px; object-fit:cover; }
-  
+/* Container principal */
+.container {
+  padding: 20px;
+}
+
+/* Seção do perfil e nome do usuário (topo da página) */
+main {
+  background-color: #b2dfdb;
+  border-radius: 15px;
+  padding: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h3 {
+  color: #444;
+  margin-top: 0;
+}
+
+main p {
+  color: #666;
+  margin-top: 0;
+}
+
+/* Imagem de perfil */
+main img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-top: -10px;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+}
+
+/* Seção de lista de produtos */
+aside {
+  background-color: #b2dfdb; 
+  border-radius: 15px;
+  padding: 40px;
+}
+
+aside h3, aside p {
+  text-align: center;
+}
+
+/* Grid de cards de produtos */
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+  gap: 15px;
+  margin-top: 16px;
+}
+
+/* Estilo individual de cada card */
+.grid-produtos article {
+  background-color: #80cbc4; 
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden; 
+}
+
+.grid-produtos article img {
+  width: 100%; 
+  border-radius: 8px;
+  height: auto;
+}
+
+.grid-produtos article p {
+  margin: 5px 0;
+}
+
+.grid-produtos article p:last-child {
+  font-weight: bold;
+  color: #2e7d32; 
+}
+
+/* Botão de edição */
+.btn-editar {
+  background-color: #ffb74d; 
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-editar:hover {
+  background-color: #ff9800; 
+}
 
 
   footer{

@@ -13,14 +13,31 @@
 </head>
 
 <body>
+<?php
+    session_start(); //aCESSAR AS INFORMAÇÕES DO $_SESSION
+
+    require_once "../factory/conexao.php"; 
+    $nome_user = "Nome do usuraio"; 
+    $codigo_user = "Código:";
+
+    //Recuperar os dados
+    if (isset($_SESSION['codigo_user'])) { 
+        $codigo_usuario_logado = $_SESSION['codigo_user'];
+        $nome_user = htmlspecialchars($_SESSION['nome_user']);
+        $codigo_user = "Código: " . htmlspecialchars($_SESSION['codigo_user']);
+    }
+?>   
+
+
     <nav>
-        <a id="top" href="">Novo Produto</a>
+        <a id="top" href="cad_pro.php">Novo Produto</a>
         <a id="top" href="../index.php">Home</a>
     </nav>
 
     <main>
-        <p id="nome"></p>
-        <img src="../img/perfil.png" alt="">
+        <h3><?php echo $nome_user; ?></h3>
+        <p><?php echo $codigo_user; ?></p>
+        <img src="../img/<?php echo $_SESSION['imagem_user'];?>" alt="">
     </main>
 
     <main class="container" style="margin-top:26px;">

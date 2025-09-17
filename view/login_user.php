@@ -19,14 +19,18 @@
 
   <div class="tabela_log">
     <h1>Seja Bem-Vindo de volta!</h1>
-    <form>
+    <form action="../model/login.php" method="POST" enctype="multipart/form-data">
       <div class="input-container">
-        <input required type="text" id="nome" />
+        <input required type="text" id="nome" name="cxnome"/>
         <label for="nome">Nome</label>
       </div>
       <div class="input-container">
-        <input required type="password" id="senha" />
+        <input required type="password" id="senha" name="cxsenha"/>
         <label for="senha">Senha</label>
+      </div>
+      <div class="input-container">
+        <input required type="password" id="cod" name="cxcod"/>
+        <label for="cod">Codigo</label>
       </div>
       <button id="bt-log">Login</button>
       <p>Ainda não tem uma conta?<a href="cad_user.php">Faça cadastro.</a></p>

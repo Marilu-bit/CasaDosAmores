@@ -16,5 +16,7 @@ tipo varchar(90) not null,
 preco varchar(90) not null,
 quantidade varchar(90) not null,
 imagem varchar(90) not null,
-coduser varchar(90) not null,
+coduser varchar(90) not null
 );
+
+select *from tbuser;

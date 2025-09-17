@@ -53,7 +53,7 @@
         if($cadastrar->execute()){
             echo ('<script>
             alert("Cadastrado com sucesso!");
-            window.location.href="../view/login_user.php";
+            window.location.href="../view/perfil_ven.php";
             </script>');
         }else{
             echo('<script>
