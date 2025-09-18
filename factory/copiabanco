@@ -6,7 +6,7 @@ coduser int primary key auto_increment,
 nome varchar(90) not null,
 senha varchar(90) not null,
 imagem varchar(90) not null,
-pro_salvo varchar(90) not null
+pro_salvo varchar(90) null
 );
 
 create table tbproduto(

@@ -79,41 +79,68 @@ h2 {
 /*MENU*/
 
 .opcoes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px; 
     padding: 70px 20px;
     width: 100%;
     box-sizing: border-box;
 }
 
-.opcoes-caixa {
-    width: 302px;
-    height: 440px;
+.content_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
     background-color: #4E8DB0;
     border-radius: 30px;
-    border: 3px solid #2f6a8a; 
+    border: 3px solid #2f6a8a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-.opcoes img {
-    width: 250px;
+.card img {
+    width: 100%;
+    max-width: 250px;
     height: 250px;
     border-radius: 30px;
-    margin-top: 10px;
-    margin-left: 25px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
 
-.opcoes p {
-    font-size: 25px;
-    margin-left: 20px;
-    color: #ffffff;
-}
-
-.opcoes button{
-    border-radius: 20%;
+.card_content {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card_title {
+    font-size: 25px;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.card_text {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.card_button {
+    background-color: #6a95b0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.card_button:hover {
+    background-color: #588099;
 }
 
 
@@ -124,97 +151,3 @@ footer{
     padding: 30px 15px;
     margin-top: auto;
 }
-
-/* RESPONSIVIDADE */
-/*@media (max-width: 768px) {
-    h2 {
-        font-size: 35px;
-    }
-
-    #banner {
-        height: 300px;
-    }
-
-    #banner img {
-        height: 300px;
-    }
-
-    #texto-banner h1 {
-        font-size: 40px;
-    }
-
-    #texto-banner p {
-        font-size: 20px;
-        left: 150px;
-    }
-
-
-
-         Filtro
-        #filtrar {
-            position: absolute;
-            right: 20px;
-            width: 300px;
-            height: 30px;
-            border-radius: 10px;
-            background-color: #C08552;
-            font-size: 20px;
-            color: #3F0F06;
-        }
-    
-         Menu
-        .opcoes {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 100px; 
-            top: 70px;
-            left: 10px;
-            width: 100%;
-        }
-}
-
-
-@media (max-width: 480px) {
-    h2 {
-        font-size: 40px;
-    }
-
-    #banner img {
-        height: 100%;
-    }
-
-    #texto-banner h1 {
-        font-size: 40px;
-    }
-
-    #texto-banner p {
-        font-size: 20px;
-        left: 150px;
-    }
-
-
-    Filtro
-    #filtrar {
-        position: absolute;
-        right: 100px;
-        width: 300px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: #C08552;
-        font-size: 20px;
-        color: #3F0F06;
-    }
-
-     Menu
-    .opcoes {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 180px; 
-        top: 70px;
-        left: 80px;
-        width: 100%;
-    }
-}
-*/

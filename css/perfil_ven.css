@@ -79,16 +79,17 @@ aside h3, aside p {
   text-align: center;
 }
 
-/* Grid de cards de produtos */
-.grid-produtos {
+/* Corrigido: Grid de cards de produtos */
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
   gap: 15px;
   margin-top: 16px;
+  justify-content: center;
 }
 
-/* Estilo individual de cada card */
-.grid-produtos article {
+/* Corrigido: Estilo individual de cada card */
+.product-card {
   background-color: #80cbc4; 
   border-radius: 10px;
   padding: 10px;
@@ -98,23 +99,25 @@ aside h3, aside p {
   overflow: hidden; 
 }
 
-.grid-produtos article img {
+.product-card img {
   width: 100%; 
   border-radius: 8px;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
 }
 
-.grid-produtos article p {
+.product-card p {
   margin: 5px 0;
 }
 
-.grid-produtos article p:last-child {
+.product-card p:last-child {
   font-weight: bold;
   color: #2e7d32; 
 }
 
 /* Botão de edição */
-.btn-editar {
+.edit-button {
   background-color: #ffb74d; 
   color: white;
   border: none;
@@ -128,7 +131,7 @@ aside h3, aside p {
   transition: background-color 0.3s;
 }
 
-.btn-editar:hover {
+.edit-button:hover {
   background-color: #ff9800; 
 }
 

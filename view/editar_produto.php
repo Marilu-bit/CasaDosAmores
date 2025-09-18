@@ -1,3 +1,27 @@
+<?php
+    session_start();
+    require_once "../factory/conexao.php";
+
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $cod_produto = $_GET['id'];
+
+        $conn = new Banco;
+        
+        $query = "SELECT * FROM tbproduto WHERE codproduto = :id";
+        $stmt = $conn->getConn()->prepare($query);
+        $stmt->bindParam(':id', $cod_produto, PDO::PARAM_INT);
+        $stmt->execute();
+        $produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$produto) {
+            header("Location: perfil_ven.php");
+            exit();
+        }
+    } else {
+        header("Location: perfil_ven.php");
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,25 +46,27 @@
 <main class="container">
     <section style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
       <div class="form-card" style="max-width:420px;">
-        <h3>Atualizar imagem</h3>
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-          <img src="ovendedor.png" alt="preview" style="width:100%;border-radius:12px;object-fit:cover">
-          <input type="file" id="atualiza-imagem" accept="image/*">
+          <img src="../img/<?php echo htmlspecialchars($produto['imagem']); ?>" alt="preview" id="imagemPreview" style="width:100%;border-radius:12px;object-fit:cover">
         </div>
       </div>
 
       <div class="form-card" style="flex:1;min-width:280px;">
         <h3>Dados do produto</h3>
 
-        <form class="form-campos" onsubmit="event.preventDefault(); alert('Alterações salvas')">
+        <form class="form-campos" action="../model/editar_produto_action.php" method="POST" enctype="multipart/form-data">
+          
+          <input type="hidden" name="codproduto" value="<?php echo htmlspecialchars($produto['codproduto']); ?>">
+
           <div class="campo">
             <label for="nome-produto">Nome</label>
-            <input id="nome-produto" type="text" value="Rosquinha Doce">
+            <input name="cxnome" id="nome-produto" type="text" value="<?php echo htmlspecialchars($produto['nome']); ?>">
           </div>
 
           <div class="campo">
             <label for="tipo-produto">Selecione um tipo</label>
-            <select id="tipo-produto">
+            <select name="cxtipo" id="tipo-produto">
+              <option value="<?php echo htmlspecialchars($produto['tipo']); ?>" selected><?php echo htmlspecialchars($produto['tipo']); ?></option>
               <option>Rosquinha</option>
               <option>Torta</option>
               <option>Bolo</option>
@@ -49,21 +75,32 @@
 
           <div class="campo">
             <label for="valor-produto">Valor (R$)</label>
-            <input id="valor-produto" type="number" step="0.01" value="15.99">
+            <input name="cxvalor" id="valor-produto" type="text" value="<?php echo htmlspecialchars($produto['preco']); ?>">
           </div>
+          
+          <label>Editar imagem</label>
+          <input type="file" id="atualiza-imagem" name="cximagem" accept="image/*">
 
           <div class="area-botoes">
-            <button class="btn-cancelar" type="button" onclick="history.back()">Cancelar</button>
-            <button class="btn-salvar" type="submit" href="perfil_ven.php" >Salvar</button>
+            <button class="btn-cancelar" type="button" onclick="window.location.href='perfil_ven.php'">Cancelar</button>
+            <button class="btn-salvar" type="submit">Salvar</button>
           </div>
         </form>
 
       </div>
     </section>
   </main>
-
+<script>
+    document.getElementById('atualiza-imagem').addEventListener('change', function(event) {
+        const [file] = event.target.files;
+        if (file) {
+            document.getElementById('imagemPreview').src = URL.createObjectURL(file);
+        }
+    });
+</script>
   <footer>
         <p>Casa dos Amores</p>
         <p>Maria Luiza & Evelyn</p>
     </footer>
 </body>
+</html>

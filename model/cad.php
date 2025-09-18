@@ -51,6 +51,17 @@
         $cadastrar->bindParam(':nome_imagem', $nome_imagem, PDO::PARAM_STR);
 
         if($cadastrar->execute()){
+            // Inicia a sessão e obtém o último ID inserido
+            session_start();
+            $codigo_user = $conn->getConn()->lastInsertId(); // <-- Obtém o ID do usuário
+            
+            // Define as variáveis de sessão, incluindo o código do usuário
+            $_SESSION['codigo_user'] = $codigo_user; // <-- Adicione esta linha
+            $_SESSION['nome_user'] = $_POST['cxnome'];
+            $_SESSION['senha_user'] = $senha_hash;
+            $_SESSION['imagem_user'] = $nome_imagem;
+            
+            // Redireciona para o perfil
             echo ('<script>
             alert("Cadastrado com sucesso!");
             window.location.href="../view/perfil_ven.php";

@@ -13,6 +13,20 @@
     <title>Casa dos Amores</title>
 </head>
 <body>
+<?php
+    require_once "factory/conexao.php";
+    
+    $conn = new Banco;
+    
+    // Consulta para buscar todos os produtos
+    $query = "SELECT * FROM tbproduto ORDER BY codproduto DESC";
+    $stmt = $conn->getConn()->prepare($query);
+    $stmt->execute();
+    
+    $todos_produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
     <div id="banner">
         <div id="barra">
             <a id="top" href="view/cad_user.php">Cadastar</a>
@@ -29,24 +43,39 @@
 
         <h2>Menu</h2>
         <select id="filtrar">
-            <option>🔍 Filtre...</option>
-            <option value="bolo">🫖 Bolo</option>
-            <option value="torta">🍵 Tortas</option>
-            <option value="sorvete">🧁 Sorvete</option>
-            <option value="doce">🍞 Doces</option>
+            <option>Filtre...</option>
+            <option value="bolo">Bolo</option>
+            <option value="torta">Tortas</option>
+            <option value="sorvete">Sorvete</option>
+            <option value="doce">Doces</option>
         </select>
 
 
         <div class="opcoes">
 
-            <!--BASE-->
-            <article class="opcoes-caixa" data-categoria="cafe">
-            <img src="img/perfil.png" alt="">
-                <p>Americano</p>
-                <p>Café</p>
-                <p id="preco">R$8,50</p>
-            </div>
-            </article>
+        <div class="content_grid">
+    <?php
+        if (count($todos_produtos) > 0) {
+            foreach ($todos_produtos as $produto) {
+    ?>
+    <div class="card" data-categoria="<?php echo htmlspecialchars($produto['tipo']); ?>">
+        <img src="img/<?php echo htmlspecialchars($produto['imagem']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>">
+        <div class="card_content">
+            <h2 class="card_title"><?php echo htmlspecialchars($produto['nome']); ?></h2>
+            <p class="card_text"><?php echo htmlspecialchars($produto['tipo']); ?></p>
+            <p class="card_text">R$ <?php echo htmlspecialchars(number_format((float)$produto['preco'], 2, ',', '.')); ?></p>
+            <a href="#" class="card_button">Comprar</a>
+        </div>
+    </div>
+    <?php
+            }
+        } else {
+            echo "<p>Nenhum produto cadastrado no momento.</p>";
+        }
+    ?>
+</div>
+
+
         
         </div>
 </main>
@@ -56,50 +85,20 @@
         <p>Maria Luiza & Evelyn</p>
     </footer>
 
-
-
-
-
-
-
-
-
-
-
-
     <script>
-        // Filtra os itens do menu
         document.getElementById('filtrar').addEventListener('change', function() {
             var categoriaSelecionada = this.value;
-            var opcoesCaixa = document.querySelectorAll('.opcoes-caixa');
+            var cards = document.querySelectorAll('.card');
 
-            opcoesCaixa.forEach(function(opcao) {
-                if (categoriaSelecionada === 'bolo') {
-                    if (opcao.getAttribute('data-categoria') === 'bolo') {
-                        opcao.style.display = 'block';
+            cards.forEach(function(card) {
+                if (categoriaSelecionada === 'bolo' || categoriaSelecionada === 'torta' || categoriaSelecionada === 'sorvete' || categoriaSelecionada === 'doce') {
+                    if (card.getAttribute('data-categoria') === categoriaSelecionada) {
+                        card.style.display = 'block';
                     } else {
-                        opcao.style.display = 'none';
-                    }
-                } else if (categoriaSelecionada === 'torta') {
-                    if (opcao.getAttribute('data-categoria') === 'torta') {
-                        opcao.style.display = 'block';
-                    } else {
-                        opcao.style.display = 'none';
-                    }
-                } else if (categoriaSelecionada === 'sorvete') {
-                    if (opcao.getAttribute('data-categoria') === 'sorvete') {
-                        opcao.style.display = 'block';
-                    } else {
-                        opcao.style.display = 'none';
-                    }
-                } else if (categoriaSelecionada === 'doces') {
-                    if (opcao.getAttribute('data-categoria') === 'doces') {
-                        opcao.style.display = 'block';
-                    } else {
-                        opcao.style.display = 'none';
+                        card.style.display = 'none';
                     }
                 } else {
-                    opcao.style.display = 'block'; 
+                    card.style.display = 'block';
                 }
             });
         });
