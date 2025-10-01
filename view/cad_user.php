@@ -38,7 +38,7 @@
                 <label for="foto">Adicionar Imagem</label>
             </div>
 
-            <img id="imagemPreview" src="../img/perfil.png" alt="Pré-visualização da imagem" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 20px auto;">
+            <img id="imagemPreview" src="../img/padrao/perfil.png" alt="Pré-visualização da imagem" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; display: block; margin: 20px auto;">
             
             <input type="submit" id="bmitBtn" name="Cadastrar" value="Cadastrar">
         </form>

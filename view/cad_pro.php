@@ -17,7 +17,7 @@
     <section class="form-section">
         <form action="../model/cad_produto.php" method="POST" enctype="multipart/form-data">
             <div class="input-group-image">
-                <img id="imagemPreview" src="../img/perfil.png" alt="Pré-visualização da imagem" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ddd;">
+                <img id="imagemPreview" src="../img/padrao/perfil.png" alt="Pré-visualização da imagem" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 2px solid #ddd;">
                 <label for="imagem" class="image-label">
                     Fazer upload da imagem
                     <input type="file" id="imagem" name="cxfoto" class="input-file" accept="image/*">

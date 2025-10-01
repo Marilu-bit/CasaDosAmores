@@ -1,7 +1,7 @@
 <?php
     class Banco{
         public static $usuarios = "root";
-        public static $senha = "senha";
+        public static $senha = "";
         public static $connect = null;
         private static function Conectar(){
             try {

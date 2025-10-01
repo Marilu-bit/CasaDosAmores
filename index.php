@@ -29,10 +29,10 @@
 
     <div id="banner">
         <div id="barra">
-            <a id="top" href="view/cad_user.php">Cadastar</a>
+            <a id="top" href="view/cad_user.php">Cadastrar</a>
             <a id="top" href="view/login_user.php">Entrar</a>
         </div>
-        <img src="img/banner.jpg" alt="">
+        <img src="img/padrao/banner.jpg" alt="">
         <div id="texto-banner">
             <h1>Casa dos <br> Amores</h1>
             <p>Lar dos melhores doces do mundo!</p>

@@ -1,11 +1,10 @@
 :root {
-  --fundo-principal: #c8efea; 
-  --ciano: #90B4C8;
-  --barra-topo: #8fb0bd; 
-  --accent: #e89ea3;  
-  --texto-escuro: #111;
-  --card-bg: #b8dfe0;
-  --cinza-claro: #f5f5f5;
+  --fundo-claro: #f0f8ff;
+  --fundo-secundario: #b1e5e2;
+  --azul-principal: #4e8db0;
+  --azul-claro: #90b4c8;
+  --texto-escuro: #3f0f06;
+  --texto-claro: #ffffff;
   --botao-salvar: #9be7b7; 
   --botao-cancelar: #f7b2b2;
   --radius-padrao: 14px;
@@ -14,7 +13,7 @@
 
 body {
   margin: 0;
-  background-color: #B1E5E2;
+  background-color: var(--fundo-secundario);
   font-family: "Della Respira", serif;  
   display: flex;
   flex-direction: column;
@@ -24,91 +23,90 @@ body {
 nav {
   width: 100%;
   height: 40px;
-  background-color:var(--ciano);
+  background-color:var(--azul-claro);
 }
 
 #top {
   display: inline-block;
-  color: #ffffff;
+  color: var(--texto-claro);
   text-decoration: none;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.form-card{
-    background:white;
-    border-radius:18px;
-    padding:20px;
-    box-shadow:var(--sombra-leve);
-    width:100%;
-    max-width:720px;
-    margin-top: 200px;
-    margin-left: 160px;
-  }
-  .form-campos{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    margin-top:10px;
-  }
-  .campo{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
-  .campo label{ font-weight:700; font-size:14px; }
-  .campo input[type="text"], .campo input[type="number"], .campo select{
-    padding:10px 14px;
-    border-radius:30px;
-    border:1px solid rgba(0,0,0,0.08);
-    width:100%;
-  }
-  .area-botoes{
-    display:flex;
-    gap:12px;
-    justify-content:flex-end;
-    margin-top:6px;
-  }
-  .btn-salvar{ 
-    background:var(--botao-salvar); 
-    border-radius:14px; 
-    padding:8px 14px; border:none; 
-  }
-  .btn-cancelar{ 
-    background:var(--botao-cancelar); 
-    border-radius:14px; 
-    padding:8px 14px; 
-    border:none; }
-  
-  
-  .form-login{
-    max-width:420px;
-    margin: 18px auto;
-    text-align:center;
-    padding:26px;
-    background:var(--fundo-principal);
-    border-radius:22px;
-    box-shadow:var(--sombra-leve);
-  }
-  .form-login h3{ 
-    font-family:var(--fonte-titulos); 
-    margin-bottom:8px; 
-  }
-  .form-login input{ 
-    width:100%; 
-    padding:10px 12px; 
-    border-radius:20px; 
-    border:1px solid rgba(0,0,0,0.08); 
-    margin-top:8px }
-  
-  footer{
-    background-color: #90B4C8;
-    color: #3F0F06;
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: auto;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-top: 20px;
 }
-  
-  
-  
+
+.form-card{
+  background: var(--texto-claro);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:var(--sombra-leve);
+  width:100%;
+  max-width:720px;
+  margin-top: 20px;
+}
+.form-campos{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
+}
+.campo{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.campo label{ font-weight:700; font-size:14px; }
+.campo input[type="text"], .campo input[type="number"], .campo select{
+  padding:10px 14px;
+  border-radius:30px;
+  border:1px solid rgba(0,0,0,0.08);
+  width:100%;
+}
+.area-botoes{
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+  margin-top:6px;
+}
+.btn-salvar{ 
+  background:var(--botao-salvar); 
+  border-radius:14px; 
+  padding:8px 14px; border:none; 
+  cursor: pointer;
+}
+.btn-cancelar{ 
+  background:var(--botao-cancelar); 
+  border-radius:14px; 
+  padding:8px 14px; 
+  border:none; 
+  cursor: pointer;
+}
+
+
+footer{
+  background-color: var(--azul-claro);
+  color: var(--texto-escuro);
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form-card {
+    max-width: 90%;
+    margin-left: 0;
+  }
+}

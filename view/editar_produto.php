@@ -84,6 +84,7 @@
           <div class="area-botoes">
             <button class="btn-cancelar" type="button" onclick="window.location.href='perfil_ven.php'">Cancelar</button>
             <button class="btn-salvar" type="submit">Salvar</button>
+            
           </div>
         </form>
 

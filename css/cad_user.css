@@ -1,12 +1,17 @@
 :root {
-  --azul: #007bff;
-  --branco: #ffffff;
-  --ciano: #90B4C8;
+  --fundo-claro: #f0f8ff;
+  --fundo-secundario: #b1e5e2;
+  --azul-principal: #4e8db0;
+  --azul-claro: #90b4c8;
+  --texto-escuro: #3f0f06;
+  --texto-claro: #ffffff;
+  --botao-sucesso: #5cb85c;
+  --botao-perigo: #d9534f;
 }
 
 body {
   margin: 0;
-  background-color: #B1E5E2;
+  background-color: var(--fundo-secundario);
   font-family: "Della Respira", serif;  
   display: flex;
   flex-direction: column;
@@ -16,12 +21,12 @@ body {
 nav {
   width: 100%;
   height: 40px;
-  background-color:var(--ciano);
+  background-color:var(--azul-claro);
 }
 
 #top {
   display: inline-block;
-  color: #ffffff;
+  color: var(--texto-claro);
   text-decoration: none;
   margin-top: 10px;
   margin-left: 10px;
@@ -36,14 +41,14 @@ h1{
 
 .tabela_cad {
   max-width: 550px;
-  margin-top: 90px;
-  margin-left: 660px;
+  margin: 90px auto 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color: #ffffff;
-  height: 600px;
-  border: 6px solid var(--ciano);
+  background-color: var(--texto-claro);
+  height: auto;
+  padding: 40px 20px;
+  border: 6px solid var(--azul-claro);
   border-radius: 79px;
 }
 
@@ -53,32 +58,31 @@ h1{
 }
 
 input {
-  width: 480px;
+  width: 100%;
+  box-sizing: border-box;
   height: 15px;
   margin-top: 5px;
   margin-bottom: 12px;
-  margin-left: 14px;
   color: black;
-  border: 2px solid var(--azul);
-  background: #90B4C8;
+  border: 2px solid var(--azul-principal);
+  background: var(--azul-claro);
   border-radius: 5px;
   padding: 1.5rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   outline: none;
-  font-size: 20px;
 }
 
 #fotos{
   height: 30px;
 }
 label {
-  color: var(--branco);
+  color: var(--texto-claro);
   position: absolute;
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
   transition: 0.3s;
-  background-color: var(--ciano);
+  background-color: var(--azul-claro);
   padding: 0 4px;
   pointer-events: none;
   font-size: 20px;
@@ -88,44 +92,54 @@ input:focus ~ label,
 input:valid ~ label {
   top: 10px;
   font-size:20px;
-  background-color: var(--ciano);
-  color: var(--branco);
-  border: 20%;
+  background-color: var(--azul-claro);
+  color: var(--texto-claro);
 }
 
 select {
-  width: 520px;
+  width: 100%;
+  box-sizing: border-box;
   height: 40px;
   margin-top: 10px;
   margin-bottom: 12px;
-  margin-left: 14px;
   border-radius: 5px;
-  border: 2px solid var(--azul);
-  background: var(--ciano);
-  color: var(--branco);
+  border: 2px solid var(--azul-principal);
+  background: var(--azul-claro);
+  color: var(--texto-claro);
   padding: 0 1rem;
   font-size: 20px;
 }
 
 #foto{
-  background-color: var(white);
-  color: white;
+  background-color: var(--texto-claro);
+  color: var(--texto-claro);
 }
 
 option {
-  background-color: var(--azul);
-  color: white;
+  background-color: var(--azul-principal);
+  color: var(--texto-claro);
 }
 
 #bt-cad{
-  width: 535px;
+  width: 100%;
+  box-sizing: border-box;
   height: 40px;
   margin-top: 10px;
-  margin-left: 5px;
   border-radius: 5px;
-  border: 2px solid var(--azul);
-  background: var(--ciano);
-  color: white;
+  border: 2px solid var(--azul-principal);
+  background: var(--azul-claro);
+  color: var(--texto-claro);
+  font-size: 20px;
+}
+input[type="submit"]{
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--azul-principal);
+  background: var(--azul-claro);
+  color: var(--texto-claro);
   font-size: 20px;
 }
 
@@ -135,11 +149,18 @@ p{
   font-size: 20px;
 }
 
-
 footer{
-  background-color: #90B4C8;
-  color: #3F0F06;
+  background-color: var(--azul-claro);
+  color: var(--texto-escuro);
   text-align: center;
   padding: 30px 15px;
   margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .tabela_cad {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px 10px;
+  }
 }
